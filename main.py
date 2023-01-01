@@ -7,7 +7,8 @@ def main():
         diff = difficulty()
 
         url = get_endpoint(num, diff)
-        json = get_json(url)
+        response = get_response(url)
+        json = get_json(response)
 
         question_list = get_questions(json)
         answer_list = get_correct_answers(json)
