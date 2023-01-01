@@ -40,7 +40,7 @@ def difficulty():
                            '\n[3] Hard'
                            '\n[4] Quit'
                            '\n')
-            if choice.strip().lower() in ['4', 'quit']:
+            if choice.strip().lower() in ['4', 'quit', 'q']:
                 print('Goodbye!')
                 exit()
             elif choice.strip().lower() in ['1', '2', '3', 'easy', 'medium', 'hard']:
@@ -58,9 +58,16 @@ def get_endpoint(number, difficulty):
     return endpoint
 
 
-def get_json(endpoint):
-    response = requests.get(endpoint)
+def get_response(endpoint):
+    try:
+        response = requests.get(endpoint)
+    except requests.exceptions.RequestException:
+        raise SystemExit("We could not retrieve any info, please try again later.")
 
+    return response
+
+
+def get_json(response):
     info = response.json()
 
     return info
@@ -143,4 +150,3 @@ def play_again():
                 raise ValueError
         except ValueError:
             print('Please enter either y or n')
-
