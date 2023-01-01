@@ -1,6 +1,6 @@
 # Simple Trivia Program
 
-Project made as Python and API practice.
+Project made for practice with Python, APIs, and unit tests.
 
 This CLI quiz app queries https://the-trivia-api.com/ to get all questions, options, and answers. It does not require an access key.  
 
@@ -10,3 +10,11 @@ This CLI quiz app queries https://the-trivia-api.com/ to get all questions, opti
 - Quit at any time
 - See score at the end
 - Option to replay
+
+### Libraries Used:
+- requests
+- random
+- unittest
+
+### Demo
+To be added
